@@ -16,10 +16,10 @@ inputs:
   deps_list: # id of input
     description: list of dependencies
     default: requirements.txt
-  pattern:
-    description: pattern of the test script name
+  cov_cfg:
+    description: location of coverage config
     required: true
-    default: 'test_*.py'
+    default: 'tests/.coveragerc'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -27,4 +27,4 @@ runs:
     - ${{ inputs.path }}
     - ${{ inputs.deps_list }}
     - ${{ inputs.test_dir }}
-    - ${{ inputs.pattern }}
+    - ${{ inputs.cov_cfg }}
