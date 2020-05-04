@@ -12,4 +12,5 @@ pip3 install -r $2
 echo "1: " $1
 echo "2: " $2
 echo "3: " $3
+echo "Debug done"
 python3 -m pytest $3 --cov=$3 --cov-config=tests/.coveragerc --cov-fail-under=60
