@@ -1,0 +1,30 @@
+# action.yml
+name: 'Python unittests'
+description: 'Runs unittests with coverage'
+branding:
+  icon: check-square
+  color: green
+inputs:
+  path:  # id of input
+    description: path of git repo relative to GITHUB_WORKSPACE(no trailing slash)
+    required: true
+    default: ''
+  test_dir:
+    description: directory containing test scripts
+    required: true
+    default: '.'
+  deps_list: # id of input
+    description: list of dependencies
+    default: requirements.txt
+  pattern:
+    description: pattern of the test script name
+    required: true
+    default: 'test_*.py'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
+    - ${{ inputs.deps_list }}
+    - ${{ inputs.test_dir }}
+    - ${{ inputs.pattern }}
