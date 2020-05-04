@@ -4,7 +4,7 @@
 cd $GITHUB_WORKSPACE/$1
 
 # install dependencies
-pytest pytest-mock pytest-cov
+pip3 install pytest pytest-mock pytest-cov
 pip3 install -r $2
 
 # test
