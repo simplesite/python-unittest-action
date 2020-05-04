@@ -4,7 +4,8 @@
 cd $GITHUB_WORKSPACE/$1
 
 # install dependencies
-pip3 install pytest pytest-mock pytest-cov
+python3 -m pip install --upgrade pip
+pip3 install flake8 pytest pytest-mock pytest-cov
 pip3 install -r $2
 
 # test
