@@ -9,4 +9,4 @@ pip3 install flake8 pytest pytest-mock pytest-cov
 pip3 install -r $2
 
 # test
-python3 -m pytest $3 --cov=$3 --cov-fail-under=60
+python3 -m pytest $3 --cov=$3 --cov-config=tests/.coveragerc --cov-fail-under=60
